@@ -2,31 +2,38 @@ import React, {useState} from 'react'
 
 export default function About(props) {
 
-    const [myStyle, setColor] =useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
+    // const [myStyle, setColor] =useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [myBtn, setBtnText]=useState("Enable Dark mode")
+    let myStyle={
+      color: props.mode=='dark'?'white':'black',
+      backgroundColor: props.mode=='dark'?'grey':'white',
+      border: '1px solid black'
 
-    const changeMode=()=>{
-        if(myStyle.color ==='black')
-        {
-            setColor({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white'
-            })
-            setBtnText("Enable Light mode")
-        }
-        else{
-            setColor({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText("Enable dark mode")
-        }
     }
+
+    // const [myBtn, setBtnText]=useState("Enable Dark mode")
+
+    // const changeMode=()=>{
+    //     if(myStyle.color ==='black')
+    //     {
+    //         setColor({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border: '1px solid white'
+    //         })
+    //         setBtnText("Enable Light mode")
+    //     }
+    //     else{
+    //         setColor({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setBtnText("Enable dark mode")
+    //     }
+    // }
 
 
     // let myStyle={
@@ -35,7 +42,7 @@ export default function About(props) {
     // }
   return (
     <>
-      <div className="container my-5" style={myStyle}>
+      <div className="container my-5" >
         <h1 >About Us</h1>
       <div className="accordion" id="accordionExample">
   <div className="accordion-item" style={myStyle} >
@@ -76,10 +83,10 @@ export default function About(props) {
   </div>
 </div>
 
-<div className="container">
+{/* <div className="container">
         <button type="button" onClick={changeMode} className="btn btn-primary my-3" >{myBtn}</button>
 
-      </div>
+      </div> */}
       </div>
      
       </>

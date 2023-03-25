@@ -43,8 +43,8 @@ function App() {
 <Navbar title="TextUtils"  mode={mode} changeMode={changeMode}/>
 <Alert alert={alert}/>
 <Switch>
-          <Route path="/about">
-            <About/>
+          <Route exact path="/about">
+          <About mode={mode}/>
           </Route>
           <Route path="/">
           <Textform showAlert={showAlert} heading ="form formatting" mode={mode}/>
